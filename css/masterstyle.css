@@ -1,12 +1,16 @@
 *{
     padding: 0;
     margin:0;
-    color:#eee;
+    color:rgb(252, 252, 252);
     text-align: center;
 }
 
 html, body{
-    background-color: white;
+    background-color: rgb(104, 80, 80);
+}
+
+h1{
+    color: rgb(70, 27, 27);
 }
 
 .main-container{
@@ -14,22 +18,25 @@ html, body{
     border-radius: 20px;
     margin: 2rem;
     background-color: rgb(50, 50, 50);
+    display: inline-flex;
+    
 }
 
-nav, section, footer, article, aside{
+nav, article{
     border: 2px rgb(55,122,0);
     margin: 1rem;
     border-radius: 10px;
     padding: 1rem;
 }
 
-article, aside{
+article{
     width: 40%;
     display: inline-block;
-    height: 300px;
+    height: 200px;
     background-color: rgb(107,107,107);
+    text-align-last: left;
 }
 
-nav, section, footer{
+nav, section{
     background-color: rgb(77, 77, 77);
 }
