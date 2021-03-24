@@ -3,11 +3,10 @@ function validar(formulario){
     if(formulario.nombre.value.length < 5){
         alert("Escribe mas de 5 caracteres en el campo nombre");
         formulario.nombre.focus();
-    return false;
+        return false;
     }
 
     //solo se puedan ingresar letras dentro de nombre
-
     var checkOK = "QWERTYUIOPÑLKJHGFDSAZXCVBNM"
     + "qwertyuiopñlkjhgfdsazxcvbnm";
     
@@ -17,7 +16,7 @@ function validar(formulario){
 
     for(var i = 0; i < checkStr.length; i++){
         var ch = checkStr.charAt(i);
-        for(var j = 0; j < checkOK.length; j++){
+        for(var j = 0; j <= checkOK.length; j++){
             if (ch == checkOK.charAt(j)) {
                 break;
             }
@@ -28,7 +27,7 @@ function validar(formulario){
         }
     }
 
-    if (!allvalid) {
+    if (allvalid == false) {
         alert("Escribe solo letras en el campo nombre");
         formulario.nombre.focus();
         return false;
@@ -44,7 +43,7 @@ function validar(formulario){
 
     for(var i = 0; i < checkStr.length; i++){
         var ch = checkStr.charAt(i);
-        for(var j = 0; j < checkOK.length; j++){
+        for(var j = 0; j <= checkOK.length; j++){
             if (ch == checkOK.charAt(j)) {
                 break;
             }
@@ -55,8 +54,8 @@ function validar(formulario){
         }
     }
 
-    if (!allvalid) {
-        alert("Escribe solo numeros en el campo nombre");
+    if (allvalid == false) {
+        alert("Escribe solo numeros en el campo edad");
         formulario.edad.focus();
         return false;
     }
@@ -67,5 +66,9 @@ function validar(formulario){
     var txt = formulario.email.value;
 
     //patron
+    var b = /^[^@\s]+@[^@\.\s]+(\.[^@\.\s]+)+$/;
+
+    alert("Email " + (b.test(txt)?"":" no ") + "valido");
+
+    return b.test(txt);
 }
-var b = /^[^@\s]+@[^@]+)+$/
